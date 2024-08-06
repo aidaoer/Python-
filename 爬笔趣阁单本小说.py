@@ -8,12 +8,13 @@ import requests
 #用于发送HTTP请求获取网页内容
 
 from tqdm import tqdm
-
+#导入 tqdm 库中的 tqdm 类，可以在循环中显示进度
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
-#
+#模拟浏览器访问信息，一开始没加，只能爬取在本地浏览器打开过的页面（只能爬第一章和章节页），加上后可以正常访问并爬取所有页面
+
 def get_content(target):
 #定义一个爬取单章小说的函数，target为形参，需要传入一个网址
     req = requests.get(url=target, headers=headers)
